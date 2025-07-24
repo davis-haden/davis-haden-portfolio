@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +28,5 @@
     "tailwindcss": "^3.4.1",
     "vite": "^7.0.6"
   },
-  "homepage": "https://your-username.github.io/your-repo"
+  "homepage": "https://davis-haden.github.io/davis-haden-portfolio/"
 }
