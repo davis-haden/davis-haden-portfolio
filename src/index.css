@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts from Google. These are also preloaded in index.html
+   to improve performance. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+/* Apply our custom font family to the body element. Using theme() here
+   allows Tailwind to resolve the configured font stack. */
+body {
+  font-family: theme('fontFamily.sans');
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+main {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
