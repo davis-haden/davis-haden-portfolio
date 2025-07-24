@@ -115,10 +115,10 @@ function App() {
               AI & Information Internetworks | Graduation: May 2027
             </p>
             <p className="text-sm opacity-70">
-              GPA: 3.87/4.0
+              GPA: 3.81/4.0
             </p>
             <p className="text-xs opacity-60">
-              Honors: Faculty Honors (4.0 GPA, 2024), Dean’s List (Fall 2023), Cum Laude Society, National Honors Society, Yale Book Award, Engineering Award, Burke Whitman Service Award
+              Honors: Faculty Honors (4.0 GPA, 2024), Dean’s List (Fall 2023, Spring 2025), Cum Laude Society, National Honors Society, Yale Book Award, Engineering Award, Burke Whitman Service Award
             </p>
           </div>
           <div className="flex space-x-4">
