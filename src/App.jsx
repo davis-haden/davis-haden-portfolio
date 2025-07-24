@@ -112,7 +112,10 @@ function App() {
             <h1 className="text-2xl font-bold">R. Davis Haden</h1>
             <p className="text-sm opacity-80">CS Student @ Georgia Tech</p>
             <p className="text-sm opacity-70">
-              AI & Information Internetworks | Graduation: May 2027 | GPA: 3.87/4.0
+              AI & Information Internetworks | Graduation: May 2027
+            </p>
+            <p className="text-sm opacity-70">
+              GPA: 3.87/4.0
             </p>
             <p className="text-xs opacity-60">
               Honors: Faculty Honors (4.0 GPA, 2024), Dean’s List (Fall 2023), Cum Laude Society, National Honors Society, Yale Book Award, Engineering Award, Burke Whitman Service Award
