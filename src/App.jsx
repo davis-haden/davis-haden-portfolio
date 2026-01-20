@@ -152,14 +152,6 @@ function App() {
           <div className="text-center space-y-1">
             <h1 className="text-2xl font-bold">R. Davis Haden</h1>
             <p className="text-sm opacity-80">CS Student @ Georgia Tech</p>
-            <p className="text-sm opacity-70">
-              AI & Information Internetworks | Graduation: May 2027
-            </p>
-            <p className="text-sm opacity-70">GPA: 3.84/4.00</p>
-            <p className="text-xs opacity-60">
-              Honors: Faculty Honors (2024, Fall 2025), Dean’s List (Fall 2023,
-              Spring 2025)
-            </p>
           </div>
           <div className="flex space-x-4">
             <a
