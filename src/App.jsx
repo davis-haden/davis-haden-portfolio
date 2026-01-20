@@ -1,28 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FiSun, FiMoon } from 'react-icons/fi';
 
 // Import the profile placeholder image. You can replace this with your own photo
 // by placing it in the `src/assets` folder and updating this import.
 import profileImg from './assets/profile-placeholder.png';
 
 // Sample project data. Modify or extend this array to showcase your own work.
+const education = {
+  school: 'Georgia Institute of Technology',
+  location: 'Atlanta, Georgia',
+  graduation: 'May 2027',
+  degree:
+    'Bachelor of Science in Computer Science, Concentrations: Intelligence & People, Minor in Industrial Design',
+  gpa: '3.84/4.00',
+  coursework: [
+    'Data Structures & Algorithms',
+    'Design & Analysis of Algorithms',
+    'Machine Learning',
+    'Artificial Intelligence',
+    'Computer Organization & Programming',
+    'Information Visualization',
+    'Human-Centered Computing & UI Design',
+    'Linear Algebra',
+    'Probability & Statistics',
+    'Discrete Mathematics',
+  ],
+  honors: [
+    'Faculty Honors (2024, Fall 2025)',
+    'Dean’s List (Fall 2023, Spring 2025)',
+  ],
+};
+
 const projects = [
   {
-    title: 'Spotify API & Student Scheduler Apps',
+    title:
+      'Predictive Modeling for Sleep Apnea Therapy Compliance | Python',
     description:
-      'Developed both the back-end and front-end for a student scheduling app and a Spotify Wrapped–inspired application using Android Studio. Integrated Spotify’s Web API for dynamic user data visualization and employed Firebase for efficient data storage and retrieval. Led a team of six using Agile methodologies (Scrum, Trello) over a three-month project cycle.',
-    tags: ['Android Studio', 'Firebase', 'Spotify API', 'Agile', 'Trello'],
-    demo: '#',
-    code: '#',
+      'Built models to predict CPAP therapy compliance using 800K+ nightly patient records. Engineered features for usage patterns and demographics, then trained Naive Bayes, Logistic Regression, and MLP models to flag patients needing intervention.',
+    tags: ['Python', 'Naive Bayes', 'Logistic Regression', 'MLP'],
   },
   {
-    title: 'Robotics & AI Projects',
+    title:
+      'Interactive Visualizations for Trends in Video Game Consumerism | JavaScript, HTML/CSS, D3.js',
     description:
-      'Implemented Kalman and Particle Filters to accurately localize moving objects, achieving over 90% accuracy in testing. Designed and applied A* search algorithms for optimal pathfinding and incorporated policy maps to enhance robot navigation. Utilized PID control for smooth autonomous corrections and integrated SLAM algorithms for robust multidimensional movement.',
-    tags: ['Python', 'AI', 'Robotics', 'Kalman Filter', 'A* Search', 'SLAM'],
-    demo: '#',
-    code: '#',
+      'Built six D3.js visualizations and cleaned Kaggle datasets to highlight sales trends. Aggregated data to make insights easy to interpret and earned 3rd place course recognition.',
+    tags: ['JavaScript', 'HTML/CSS', 'D3.js', 'Data Visualization'],
   },
 ];
 
@@ -31,64 +53,83 @@ const skills = [
   'Python',
   'Java',
   'JavaScript',
-  'C',
   'SQL',
-  'SQL Server',
-  'HTML/CSS',
-  'NumPy',
-  'OpenCV',
-  'SciPy',
-  'pandas',
-  'React.js',
+  'C#',
+  'C++',
+  'React',
   'React Native',
-  'Android Studio',
-  'Firebase',
-  'Streamlit',
-  'Trello',
-  'Power BI',
+  'Unity',
+  'HTML/CSS',
+  'SQL Server',
   'Microsoft Fabric',
-  'Medallion Architecture',
+  'Power BI',
+  'Streamlit',
+  'Git/GitHub',
   'Pydantic',
-  'OpenAI API (GPT-4/4o integration)',
-  'Azure DevOps',
-  'Data Pipelines & ETL',
-  'Data Visualization',
-  'Prompt Engineering',
-  'Structured Document Parsing',
-  'Git & Version Control',
-  'Agile / Sprint-Based Workflow',
-  'Data Structures',
-  'Kalman Filters',
-  'Particle Filters',
-  'A* Search',
-  'PID Control',
-  'SLAM',
+  'OpenAI APIs',
+  'scikit-learn',
+  'Naive Bayes',
+  'Logistic Regression',
+  'MLPs',
+  'Feature Engineering',
+  'Model Evaluation',
 ];
 
 // Experience items. You can add more entries as needed.
 const experience = [
   {
-    title: 'IT Intern',
+    title: 'IT Data Management/Engineering Intern',
     company: 'SKANSKA — Charlotte, NC',
-    duration: 'Summer 2025',
+    duration: 'Jun 2025 – Jul 2025',
     description:
-      'Designed and developed dynamic dashboards in <b>Power BI</b> to visualize key operational metrics, enabling more informed decision-making across departments. Built and optimized <b>SQL Server</b> pipelines to streamline data flow and automate reporting tasks. Contributed to <b>Microsoft Fabric</b> projects utilizing <b>Medallion Architecture</b> to structure lakehouse environments for scalable data analytics. Developed internal data science solutions using <b>Python</b>, <b>Streamlit</b>, and <b>OpenAI\'s API</b>, improving workflow efficiency and enabling conversational interfaces for data access. Engineered robust <b>Pydantic</b> models to generate structured outputs from unstructured documents via LLM-powered extraction, reducing manual compliance tasks. Collaborated cross-functionally with data engineers, analysts, and stakeholders to identify business needs and deliver technical solutions with real-world impact.'
+      'Designed <b>Power BI</b> dashboards, optimized <b>SQL Server</b> pipelines, and contributed to <b>Microsoft Fabric</b> lakehouse projects. Built Python/Streamlit apps with <b>OpenAI APIs</b> and <b>Pydantic</b> to automate LLM-driven extraction, improving reporting and compliance workflows.',
   },
   {
     title: 'Intern',
-    company: 'HelloPackage',
-    duration: 'Summer 2023',
+    company: 'HelloPackage — Atlanta, GA',
+    duration: 'May 2023 – Aug 2023',
     description:
-      'Created engaging social media content (<b>LinkedIn</b> posts, <b>TikTok</b> videos, <b>Instagram</b> graphics) using <b>Final Cut Pro X</b> and <b>Adobe InDesign</b>. Researched and implemented best practices that increased viewer interaction threefold. Designed over 10 templates and established streamlined workflows for company publicity.'
-  },
-  {
-    title: 'Team Member/Sensei',
-    company: 'Code Ninjas',
-    duration: 'Summer 2022',
-    description:
-      'Taught coding classes and camps to 30+ children (ages 6–13) using <b>Unity</b>, <b>JavaScript</b>, <b>Java</b>, and <b>Python</b>. Developed interactive projects and engaging learning activities to foster interest in coding.'
+      'Created social media content (LinkedIn posts, TikTok videos, Instagram graphics) using <b>Final Cut Pro X</b> and <b>Adobe InDesign</b>. Researched best practices that increased viewer interaction threefold and designed 10+ templates for streamlined publicity.',
   },
 ];
+
+const leadership = [
+  {
+    title: 'Executive Recruitment Chair',
+    company: 'Theta Chi Fraternity',
+    duration: 'Aug 2024 – Aug 2025',
+    description:
+      'Led recruitment strategy at Georgia Tech, driving the successful recruitment of 30+ new members. Organized events, formal rush activities, and maintained detailed records.',
+  },
+  {
+    title: 'Student Programming Lead',
+    company: 'Vertically Integrated Project — Current Crisis',
+    duration: 'Aug 2025 – Present',
+    description:
+      'Modeled wildfire behavior for a large-scale Unity city simulation and built scalable, modular C# systems for real-time simulation, state management, and player decision logging. Conducted code reviews, mentored junior developers, and managed sprint planning.',
+  },
+  {
+    title: 'Project Manager',
+    company: 'GT WebDev',
+    duration: 'Jan 2026 – Present',
+    description:
+      'Leading a semester-long effort to design and build a React website and mobile app for a nonprofit (Praying for the Next Generation — PFTNG).',
+  },
+  {
+    title: 'Team Member',
+    company: 'TOM — Tikkun Olam Makers',
+    duration: 'Aug 2025 – Present',
+    description:
+      'Collaborated with engineers, designers, and clinicians to develop open-source assistive technologies. Led materials research for an assistive bath chair project.',
+  },
+];
+
+const additional = {
+  languages: 'Spanish (Basic)',
+  fineArts: 'Piano (Received Superior+ from Musicians Guild in 2023)',
+  interests:
+    'Baking, Rock Climbing, Tennis, Hiking, Reading, Science Fiction, Live Jazz, Traveling',
+};
 
 function App() {
   // Always enable dark mode
@@ -114,11 +155,10 @@ function App() {
             <p className="text-sm opacity-70">
               AI & Information Internetworks | Graduation: May 2027
             </p>
-            <p className="text-sm opacity-70">
-              GPA: 3.81/4.0
-            </p>
+            <p className="text-sm opacity-70">GPA: 3.84/4.00</p>
             <p className="text-xs opacity-60">
-              Honors: Faculty Honors (4.0 GPA, 2024), Dean’s List (Fall 2023, Spring 2025), Cum Laude Society, National Honors Society, Yale Book Award, Engineering Award, Burke Whitman Service Award
+              Honors: Faculty Honors (2024, Fall 2025), Dean’s List (Fall 2023,
+              Spring 2025)
             </p>
           </div>
           <div className="flex space-x-4">
@@ -132,7 +172,7 @@ function App() {
               <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/roland-haden-7923191b0"
+              href="https://www.linkedin.com/in/davis-haden"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -155,6 +195,43 @@ function App() {
       </aside>
       {/* Main content */}
       <main className="flex-1 h-screen overflow-y-auto p-6 space-y-16">
+        {/* Education */}
+        <section id="education">
+          <h2 className="text-3xl font-bold mb-8">Education</h2>
+          <div className="rounded-xl p-6 bg-white/10 dark:bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl shadow-black/10 space-y-4">
+            <div className="flex flex-wrap justify-between gap-2">
+              <div>
+                <h3 className="text-xl font-semibold">
+                  {education.school}
+                </h3>
+                <p className="text-sm opacity-80">{education.location}</p>
+              </div>
+              <div className="text-sm opacity-80">
+                {education.graduation}
+              </div>
+            </div>
+            <p className="text-sm opacity-80">{education.degree}</p>
+            <p className="text-sm opacity-80">GPA: {education.gpa}</p>
+            <div>
+              <p className="text-sm font-semibold mb-2">
+                Relevant Coursework
+              </p>
+              <ul className="grid gap-1 text-sm opacity-80 sm:grid-cols-2">
+                {education.coursework.map((course) => (
+                  <li key={course}>• {course}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-semibold mb-2">Honors</p>
+              <ul className="grid gap-1 text-sm opacity-80 sm:grid-cols-2">
+                {education.honors.map((honor) => (
+                  <li key={honor}>• {honor}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
         {/* Projects */}
         <section id="projects">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
@@ -171,16 +248,15 @@ function App() {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIdx) => (
+                  {project.tags.map((tag) => (
                     <span
-                      key={tagIdx}
+                      key={tag}
                       className="px-3 py-1 text-xs rounded-full bg-white/10 border border-white/20 backdrop-blur-sm"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                {/* Demo/Code buttons hidden for now */}
               </div>
             ))}
           </div>
@@ -199,9 +275,29 @@ function App() {
             ))}
           </div>
         </section>
-        {/* Experience */}
+        {/* Additional Skills & Interests */}
+        <section id="additional">
+          <h2 className="text-3xl font-bold mb-8">
+            Additional Skills &amp; Interests
+          </h2>
+          <div className="rounded-xl p-6 bg-white/10 dark:bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl shadow-black/10 space-y-3 text-sm opacity-80">
+            <p>
+              <span className="font-semibold">Languages:</span>{' '}
+              {additional.languages}
+            </p>
+            <p>
+              <span className="font-semibold">Fine Arts:</span>{' '}
+              {additional.fineArts}
+            </p>
+            <p>
+              <span className="font-semibold">Interests:</span>{' '}
+              {additional.interests}
+            </p>
+          </div>
+        </section>
+        {/* Work Experience */}
         <section id="experience">
-          <h2 className="text-3xl font-bold mb-8">Experience</h2>
+          <h2 className="text-3xl font-bold mb-8">Work Experience</h2>
           <div className="space-y-6">
             {experience.map((exp, idx) => (
               <div
@@ -227,12 +323,39 @@ function App() {
             ))}
           </div>
         </section>
+        {/* Leadership & Community */}
+        <section id="leadership">
+          <h2 className="text-3xl font-bold mb-8">
+            Leadership &amp; Community
+          </h2>
+          <div className="space-y-6">
+            {leadership.map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl p-6 bg-white/10 dark:bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl shadow-black/10"
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <span className="text-sm opacity-80">
+                    {item.duration}
+                  </span>
+                </div>
+                <p className="text-sm font-medium mb-1">
+                  {item.company}
+                </p>
+                <p className="text-sm opacity-80">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
         {/* Contact */}
         <section id="contact" className="pb-20">
           <h2 className="text-3xl font-bold mb-8">Contact</h2>
           <div className="rounded-xl p-6 bg-white/10 dark:bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl shadow-black/10 space-y-4">
             <p className="text-sm opacity-80">
-              I’d love to hear from you! Feel free to reach out via email:
+              I’d love to hear from you! Feel free to reach out:
             </p>
             <a
               href="mailto:rhaden8@gatech.edu"
@@ -240,12 +363,27 @@ function App() {
             >
               rhaden8@gatech.edu
             </a>
-            <a
-              href="mailto:davis.haden@gmail.com"
-              className="inline-block text-blue-400 underline hover:text-blue-300 ml-4"
-            >
-              davis.haden@gmail.com
-            </a>
+            <div className="text-sm opacity-80">
+              (678) 772-1370
+            </div>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a
+                href="https://www.linkedin.com/in/davis-haden"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline hover:text-blue-300"
+              >
+                linkedin.com/in/davis-haden
+              </a>
+              <a
+                href="https://github.com/davis-haden"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline hover:text-blue-300"
+              >
+                github.com/davis-haden
+              </a>
+            </div>
           </div>
         </section>
       </main>
