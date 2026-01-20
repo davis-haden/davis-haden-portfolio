@@ -34,14 +34,14 @@ const education = {
 const projects = [
   {
     title:
-      'Predictive Modeling for Sleep Apnea Therapy Compliance | Python',
+      'Predictive Modeling for Sleep Apnea Therapy Compliance',
     description:
       'Built models to predict CPAP therapy compliance using 800K+ nightly patient records. Engineered features for usage patterns and demographics, then trained Naive Bayes, Logistic Regression, and MLP models to flag patients needing intervention.',
     tags: ['Python', 'Naive Bayes', 'Logistic Regression', 'MLP'],
   },
   {
     title:
-      'Interactive Visualizations for Trends in Video Game Consumerism | JavaScript, HTML/CSS, D3.js',
+      'Interactive Visualizations for Trends in Video Game Consumerism',
     description:
       'Built six D3.js visualizations and cleaned Kaggle datasets to highlight sales trends. Aggregated data to make insights easy to interpret and earned 3rd place course recognition.',
     tags: ['JavaScript', 'HTML/CSS', 'D3.js', 'Data Visualization'],
