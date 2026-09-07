@@ -15,29 +15,31 @@ const education = {
   gpa: '3.84/4.00',
   coursework: [
     'Data Structures & Algorithms',
-    'Design & Analysis of Algorithms',
     'Machine Learning',
     'Artificial Intelligence',
-    'Computer Organization & Programming',
     'Information Visualization',
     'Human-Centered Computing & UI Design',
-    'Linear Algebra',
-    'Probability & Statistics',
-    'Discrete Mathematics',
+    'Design & Analysis of Algorithms',
   ],
   honors: [
     'Faculty Honors (2024, Fall 2025)',
-    'Dean’s List (Fall 2023, Spring 2025)',
+    'Dean’s List (Fall 2023, Spring 2025, Spring 2026)',
   ],
 };
 
 const projects = [
   {
+    title: 'Student Programming Lead, Current Crisis',
+    description:
+      'Student Lead for Current Crisis, a large-scale Unity (C#), IRB-reviewed simulation game modeling power grid resilience under wildfires and extreme events. Built and maintained scalable, modular C# systems for real-time simulation, state management, and player decision logging. Conducted code reviews, mentored junior developers, and managed planning across multiple sprints.',
+    tags: ['Unity', 'C#', 'Simulation'],
+  },
+  {
     title:
       'Predictive Modeling for Sleep Apnea Therapy Compliance',
     description:
-      'Built models to predict CPAP therapy compliance using 800K+ nightly patient records. Engineered features for usage patterns and demographics, then trained Naive Bayes, Logistic Regression, and MLP models to flag patients needing intervention.',
-    tags: ['Python', 'Naive Bayes', 'Logistic Regression', 'MLP'],
+      'Built models to predict CPAP therapy compliance using 800K+ nightly patient records. Engineered features for usage patterns and demographics, then trained Naïve Bayes, Logistic Regression, and MLP models to flag patients needing intervention.',
+    tags: ['Python', 'Naïve Bayes', 'Logistic Regression', 'MLP'],
   },
   {
     title:
@@ -53,13 +55,15 @@ const skills = [
   'Python',
   'Java',
   'JavaScript',
+  'Swift',
+  'Kotlin',
   'SQL',
   'C#',
   'C++',
   'React',
   'React Native',
+  'Ionic & Capacitor',
   'Unity',
-  'HTML/CSS',
   'SQL Server',
   'Microsoft Fabric',
   'Power BI',
@@ -67,68 +71,69 @@ const skills = [
   'Git/GitHub',
   'Pydantic',
   'OpenAI APIs',
+  'Proxyman',
   'scikit-learn',
-  'Naive Bayes',
+  'Naïve Bayes',
   'Logistic Regression',
   'MLPs',
   'Feature Engineering',
   'Model Evaluation',
+  'Game AI',
 ];
 
 // Experience items. You can add more entries as needed.
 const experience = [
   {
+    title: 'Mobile Software Engineer Intern (Part-Time)',
+    company: 'Flock — Atlanta, GA',
+    duration: 'May 2026 – Present',
+    description:
+      'Built "Trending Plates," a cross-platform iOS (<b>Swift</b>) and Android (<b>Kotlin</b>) feature that alerts officers nationwide when another officer searches the same license plate and enables direct email outreach between them, connecting cross-jurisdiction leads, driving 100+ weekly active users, and presented to the executive board. Reviewed 20+ pull requests and shipped additional features spanning data compliance and UX improvements across both mobile platforms.',
+  },
+  {
+    title: 'Mobile Engineer',
+    company: 'Praying for the Next Generation (PFTNG) — Atlanta, GA',
+    duration: 'Jan 2026 – Present',
+    description:
+      'Developed and published a cross-platform iOS/Android app using <b>Ionic</b>, <b>Capacitor</b>, and <b>Firebase</b> for 1,000+ users. Partnered with stakeholders to identify user needs and led a 30+ person beta test to guide pre-release refinements.',
+  },
+  {
     title: 'IT Data Management/Engineering Intern',
     company: 'SKANSKA — Charlotte, NC',
     duration: 'Jun 2025 – Jul 2025',
     description:
-      'Designed <b>Power BI</b> dashboards, optimized <b>SQL Server</b> pipelines, and contributed to <b>Microsoft Fabric</b> lakehouse projects. Built Python/Streamlit apps with <b>OpenAI APIs</b> and <b>Pydantic</b> to automate LLM-driven extraction, improving reporting and compliance workflows.',
-  },
-  {
-    title: 'Intern',
-    company: 'HelloPackage — Atlanta, GA',
-    duration: 'May 2023 – Aug 2023',
-    description:
-      'Created social media content (LinkedIn posts, TikTok videos, Instagram graphics) using <b>Final Cut Pro X</b> and <b>Adobe InDesign</b>. Researched best practices that increased viewer interaction threefold and designed 10+ templates for streamlined publicity.',
+      'Designed <b>Power BI</b> dashboards, optimized <b>SQL Server</b> pipelines, and built Python/Streamlit apps with <b>OpenAI APIs</b> for LLM-driven extraction, automating reporting and legal compliance workflows.',
   },
 ];
 
 const leadership = [
   {
-    title: 'Executive Recruitment Chair',
-    company: 'Theta Chi Fraternity',
-    duration: 'Aug 2024 – Aug 2025',
-    description:
-      'Led recruitment strategy at Georgia Tech, driving the successful recruitment of 30+ new members. Organized events, formal rush activities, and maintained detailed records.',
-  },
-  {
-    title: 'Student Programming Lead',
-    company: 'Vertically Integrated Project — Current Crisis',
-    duration: 'Aug 2025 – Present',
-    description:
-      'Modeled wildfire behavior for a large-scale Unity city simulation and built scalable, modular C# systems for real-time simulation, state management, and player decision logging. Conducted code reviews, mentored junior developers, and managed sprint planning.',
-  },
-  {
     title: 'Project Manager',
-    company: 'GT WebDev',
+    company: 'GT WebDev — Client Project',
     duration: 'Jan 2026 – Present',
     description:
-      'Leading a semester-long effort to design and build a React website and mobile app for a nonprofit (Praying for the Next Generation — PFTNG).',
+      'Led a semester-long project to design and build a React website & mobile app prototype for a nonprofit organization.',
   },
   {
     title: 'Team Member',
     company: 'TOM — Tikkun Olam Makers',
     duration: 'Aug 2025 – Present',
     description:
-      'Collaborated with engineers, designers, and clinicians to develop open-source assistive technologies. Led materials research for an assistive bath chair project.',
+      'Collaborated on the development, design, and materials research of an assistive bath chair for an infant with spinal deformities affecting mobility.',
+  },
+  {
+    title: 'Executive Recruitment Chair',
+    company: 'Theta Chi Fraternity',
+    duration: 'Aug 2024 – Aug 2025',
+    description:
+      'Orchestrated recruitment strategies at Georgia Tech, leading to the successful recruitment of 30+ new members. Organized recruitment events, formal rush activities, summer programming, and maintained detailed event records.',
   },
 ];
 
 const additional = {
-  languages: 'Spanish (Basic)',
-  fineArts: 'Piano (Received Superior+ from Musicians Guild in 2023)',
-  interests:
-    'Baking, Rock Climbing, Tennis, Hiking, Reading, Science Fiction, Live Jazz, Traveling',
+  languages: 'English, Spanish',
+  fineArts: 'Piano (Received Superior++ from Musicians Guild in 2023)',
+  interests: 'Baking, Rock Climbing, Reading, Live Jazz',
 };
 
 function App() {
